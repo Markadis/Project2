@@ -29,12 +29,12 @@ public class PlayerDota2Profile {
 	@Column
 	private int position;
 	
-	@Transient
-	private long hero1;
+	@Column
+	private Hero hero1;
 	
-	@Transient
-	private long hero2;
+	@Column
+	private Hero hero2;
 	
-	@Transient
-	private long hero3;
+	@Column
+	private Hero hero3;
 }
