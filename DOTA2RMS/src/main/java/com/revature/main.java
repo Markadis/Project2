@@ -57,20 +57,20 @@ public class main {
 //		session.close();
 		
 //		Session session = HibernateUtil.getSession();
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		File file = new File(System.getProperty("user.dir") + "/src/main/java/com/revature/raw/heroes.json");
-//		try {
-//			Hero[] heroList = objectMapper.readValue(file, Hero[].class);
-//			HeroDao heroDao = new HeroDao();
-//			
-//			for(Hero hero : heroList) {
-//				heroDao.createHero(session, hero.getName(), hero.getId(), hero.getLocalizedName());
-//				
-//			}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		ObjectMapper objectMapper = new ObjectMapper();
+		File file = new File(System.getProperty("user.dir") + "/src/main/java/com/revature/raw/heroes.json");
+		try {
+			Hero[] heroList = objectMapper.readValue(file, Hero[].class);
+			HeroDao heroDao = new HeroDao();
+			System.out.println(heroList.length);
+			for(Hero hero : heroList) {
+				heroDao.createHero(hero);
+				
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		session.close();
 
 	}

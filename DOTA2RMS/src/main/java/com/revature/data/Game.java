@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 @Entity
 @Table
 public class Game {

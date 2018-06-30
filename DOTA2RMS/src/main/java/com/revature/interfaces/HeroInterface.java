@@ -1,11 +1,14 @@
 package com.revature.interfaces;
 
+import java.util.List;
+
 import org.hibernate.Session;
 
 import com.revature.data.Hero;
 
 public interface HeroInterface {
-	long createHero(Session session, String name, long id, String localizedName);
-	Hero getHeroById(Session session, long id);
-	Hero getHeroByName(Session session, String name);
+	Hero createHero(Hero hero);
+	Hero findHeroById(long id);
+	Hero findHeroByName(String name);
+	List<Hero> getAllHeroes();
 }

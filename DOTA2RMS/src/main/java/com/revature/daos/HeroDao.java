@@ -1,32 +1,43 @@
 package com.revature.daos;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.Hero;
 import com.revature.interfaces.HeroInterface;
+import com.revature.repositories.HeroRepository;
 
+@Service
+@Transactional
 public class HeroDao implements HeroInterface{
 
+	@Autowired
+	private HeroRepository heroRepository;
+
 	@Override
-	public long createHero(Session session, String name, long id, String localizedName) {
-		Transaction transaction = session.beginTransaction();
-		Hero hero = new Hero(name, id, localizedName);
-		session.merge(hero);
-		transaction.commit();
-		return hero.getId();
+	public Hero createHero(Hero hero) {
+		return heroRepository.save(hero);
 	}
 
 	@Override
-	public Hero getHeroById(Session session, long id) {
+	public Hero findHeroById(long id) {
+		return heroRepository.getOne(id);
+	}
+
+	@Override
+	public Hero findHeroByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Hero getHeroByName(Session session, String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Hero> getAllHeroes() {
+		return heroRepository.findAll();
 	}
 	
 }
