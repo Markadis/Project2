@@ -1,0 +1,123 @@
+html, body{
+  height: 100%;
+}
+
+html{
+  overflow: auto;
+}
+
+body{
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.background{
+  display: inline-block;
+  background: url("https://i.imgur.com/1IFwhtw.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.d2-btn-primary {
+  color: #ffffff;
+  background-color: #BD1B1D;
+  border-color: #694A02;
+}
+
+.d2-btn-primary:hover,
+.d2-btn-primary:focus,
+.d2-btn-primary:active,
+.d2-btn-primary.active,
+.open .dropdown-toggle.d2-btn-primary {
+  color: #ffffff;
+  background-color: #7A2428;
+  border-color: #694A02;
+}
+
+.d2-btn-primary:active,
+.d2-btn-primary.active,
+.open .dropdown-toggle.d2-btn-primary {
+  background-image: none;
+}
+
+.d2-btn-primary.disabled,
+.d2-btn-primary[disabled],
+fieldset[disabled] .d2-btn-primary,
+.d2-btn-primary.disabled:hover,
+.d2-btn-primary[disabled]:hover,
+fieldset[disabled] .d2-btn-primary:hover,
+.d2-btn-primary.disabled:focus,
+.d2-btn-primary[disabled]:focus,
+fieldset[disabled] .d2-btn-primary:focus,
+.d2-btn-primary.disabled:active,
+.d2-btn-primary[disabled]:active,
+fieldset[disabled] .d2-btn-primary:active,
+.d2-btn-primary.disabled.active,
+.d2-btn-primary[disabled].active,
+fieldset[disabled] .d2-btn-primary.active {
+  background-color: #BD1B1D;
+  border-color: #694A02;
+}
+
+.d2-btn-primary .badge {
+  color: #BD1B1D;
+  background-color: #ffffff;
+}
+
+.d2-btn-secondary {
+  color: #ffffff;
+  background-color: #B53C3E;
+  border-color: #694A02;
+}
+
+.d2-btn-secondary:hover,
+.d2-btn-secondary:focus,
+.d2-btn-secondary:active,
+.d2-btn-secondary.active,
+.open .dropdown-toggle.d2-btn-secondary {
+  color: #ffffff;
+  background-color: #7A2428;
+  border-color: #694A02;
+}
+
+.d2-btn-secondary:active,
+.d2-btn-secondary.active,
+.open .dropdown-toggle.d2-btn-secondary {
+  background-image: none;
+}
+
+.d2-btn-secondary.disabled,
+.d2-btn-secondary[disabled],
+fieldset[disabled] .d2-btn-secondary,
+.d2-btn-secondary.disabled:hover,
+.d2-btn-secondary[disabled]:hover,
+fieldset[disabled] .d2-btn-secondary:hover,
+.d2-btn-secondary.disabled:focus,
+.d2-btn-secondary[disabled]:focus,
+fieldset[disabled] .d2-btn-secondary:focus,
+.d2-btn-secondary.disabled:active,
+.d2-btn-secondary[disabled]:active,
+fieldset[disabled] .d2-btn-secondary:active,
+.d2-btn-secondary.disabled.active,
+.d2-btn-secondary[disabled].active,
+fieldset[disabled] .d2-btn-secondary.active {
+  background-color: #B53C3E;
+  border-color: #694A02;
+}
+
+.d2-btn-secondary .badge {
+  color: #B53C3E;
+  background-color: #ffffff;
+}
+
+#loginbox{
+  display: inline-block;
+  margin-top: 25vh;
+  background: hsla(0, 0%, 100%, 0.5);
+  overflow-y: hidden;
+  margin-bottom: 38.8vh;
+}
