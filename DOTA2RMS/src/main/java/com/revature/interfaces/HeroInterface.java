@@ -10,5 +10,5 @@ public interface HeroInterface {
 	Hero createHero(Hero hero);
 	Hero findHeroById(long id);
 	Hero findHeroByName(String name);
-	List<Hero> getAllHeroes();
+	List<Hero> findAllHeroes();
 }

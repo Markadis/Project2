@@ -1,4 +1,4 @@
-package com.revature.daos;
+package com.revature.services;
 
 import java.util.List;
 
@@ -27,13 +27,24 @@ public class PlayerService implements PlayerInterface {
 	}
 
 	@Override
-	public Player getPlayerById(long id) {
+	public Player updatePlayer(Player player) {
+		return playerRepository.save(player);
+	}
+
+	@Override
+	public Player findPlayerById(long id) {
 		return playerRepository.getOne(id);
 	}
 
 	@Override
-	public List<Player> getAllPlayers() {
+	public List<Player> findAllPlayers() {
 		return playerRepository.findAll();
+	}
+
+	@Override
+	public Player deletePlayer(Player player) {
+		playerRepository.delete(player);
+		return player;
 	}
 	
 	

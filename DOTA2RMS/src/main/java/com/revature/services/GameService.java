@@ -1,4 +1,4 @@
-package com.revature.daos;
+package com.revature.services;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class GameService implements GameInterface {
 	}
 
 	@Override
-	public Game getGameById(long id) {
+	public Game findGameById(long id) {
 		return gameRepository.getOne(id);
 	}
 
@@ -33,7 +33,7 @@ public class GameService implements GameInterface {
 	}
 
 	@Override
-	public List<Game> getAllGames() {
+	public List<Game> findAllGames() {
 		return gameRepository.findAll();
 	}
 

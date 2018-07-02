@@ -7,8 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.daos.HeroService;
 import com.revature.data.Hero;
+import com.revature.services.HeroService;
 
 @Component
 public class HeroLoader implements CommandLineRunner {

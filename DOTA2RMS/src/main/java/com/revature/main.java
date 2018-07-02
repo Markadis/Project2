@@ -12,8 +12,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.daos.HeroService;
 import com.revature.data.Hero;
+import com.revature.services.HeroService;
 import com.revature.util.HibernateUtil;
 
 @SpringBootApplication

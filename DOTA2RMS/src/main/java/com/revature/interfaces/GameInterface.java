@@ -9,7 +9,7 @@ import com.revature.data.Hero;
 
 public interface GameInterface {
 	Game createGame(Game game);
-	Game getGameById(long id);
+	Game findGameById(long id);
 	Game getGameByName(String name);
-	List<Game> getAllGames();
+	List<Game> findAllGames();
 }

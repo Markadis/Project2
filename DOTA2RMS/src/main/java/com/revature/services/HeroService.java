@@ -1,4 +1,4 @@
-package com.revature.daos;
+package com.revature.services;
 
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class HeroService implements HeroInterface{
 	}
 
 	@Override
-	public List<Hero> getAllHeroes() {
+	public List<Hero> findAllHeroes() {
 		return heroRepository.findAll();
 	}
 	

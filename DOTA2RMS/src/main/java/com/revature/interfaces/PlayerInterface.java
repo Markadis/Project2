@@ -11,8 +11,10 @@ import com.revature.data.Player;
 public interface PlayerInterface {
 	Player createPlayer(Player player);
 	Player getPlayerByUsername(String username);
-	Player getPlayerById(long id);
+	Player findPlayerById(long id);
+	Player updatePlayer(Player player);
+	Player deletePlayer(Player player);
 //	boolean checkPlayerExistsById(Session session, long id);
 //	boolean checkPlayerExistsByUsername(Session session, String name);
-	List<Player> getAllPlayers();
+	List<Player> findAllPlayers();
 }
