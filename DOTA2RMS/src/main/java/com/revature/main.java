@@ -5,20 +5,21 @@ import java.io.File;
 import java.io.IOException;
 
 import org.hibernate.Session;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.daos.HeroDao;
+import com.revature.daos.HeroService;
 import com.revature.data.Hero;
 import com.revature.util.HibernateUtil;
 
 @SpringBootApplication
-public class main {
+public class main{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		
 		SpringApplication.run(main.class, args);
 		
@@ -57,20 +58,20 @@ public class main {
 //		session.close();
 		
 //		Session session = HibernateUtil.getSession();
-		ObjectMapper objectMapper = new ObjectMapper();
-		File file = new File(System.getProperty("user.dir") + "/src/main/java/com/revature/raw/heroes.json");
-		try {
-			Hero[] heroList = objectMapper.readValue(file, Hero[].class);
-			HeroDao heroDao = new HeroDao();
-			System.out.println(heroList.length);
-			for(Hero hero : heroList) {
-				heroDao.createHero(hero);
-				
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		ObjectMapper objectMapper = new ObjectMapper();
+//		File file = new File(System.getProperty("user.dir") + "/src/main/java/com/revature/raw/heroes.json");
+//		try {
+//			Hero[] heroList = objectMapper.readValue(file, Hero[].class);
+//			HeroDao heroDao = new HeroDao();
+//			System.out.println(heroList.length);
+//			for(Hero hero : heroList) {
+//				heroDao.createHero(hero);
+//				
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 //		session.close();
 
 	}

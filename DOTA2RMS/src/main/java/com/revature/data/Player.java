@@ -1,5 +1,6 @@
 package com.revature.data;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashSet;

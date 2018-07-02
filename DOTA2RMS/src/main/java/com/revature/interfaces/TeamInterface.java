@@ -1,13 +1,13 @@
 package com.revature.interfaces;
 
-import org.hibernate.Session;
+import java.util.List;
 
-import com.revature.data.Game;
 import com.revature.data.Team;
 
 public interface TeamInterface {
-	long createTeam(Session session, String name, String details, Game game);
-	Team getTeamById(Session session, long id);
-	Team getTeamByName(Session session, String name);
-	boolean checkTeamExistsByName(Session session, String name);
+	Team createTeam(Team team);
+	Team getTeamById(long id);
+	Team getTeamByName(String name);
+//	boolean checkTeamExistsByName(String name);
+	List<Team> getAllTeams();
 }

@@ -14,7 +14,7 @@ import com.revature.repositories.HeroRepository;
 
 @Service
 @Transactional
-public class HeroDao implements HeroInterface{
+public class HeroService implements HeroInterface{
 
 	@Autowired
 	private HeroRepository heroRepository;
