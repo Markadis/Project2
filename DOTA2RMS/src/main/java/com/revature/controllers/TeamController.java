@@ -13,40 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.data.Player;
-import com.revature.services.PlayerService;
+import com.revature.data.Team;
+import com.revature.services.TeamService;
 
 @RestController
-@RequestMapping("/player")
-public class PlayerController {
+@RequestMapping("/team")
+public class TeamController {
 	
 	@Autowired
-	private PlayerService playerService;
+	private TeamService teamService;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Player> getAllPlayers() {
-		return playerService.findAllPlayers();
+	public List<Team> getAllTeams() {
+		return teamService.findAllTeams();
 	}	
 
 	@GetMapping(value="/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player findPlayerById(@PathVariable("id") long id) {
-		return playerService.findPlayerById(id);
+	public Team findTeamById(@PathVariable("id") long id) {
+		return teamService.findTeamById(id);
 	}
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player createPlayer(@RequestBody Player player) {
-		return playerService.createPlayer(player);
+	public Team createTeam(@RequestBody Team team) {
+		return teamService.createTeam(team);
 	}
 
 	@PutMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player updatePlayer(@RequestBody Player player) {
-		return playerService.updatePlayer(player);
+	public Team updateTeam(@RequestBody Team team) {
+		return teamService.updateTeam(team);
 	}
 
 	@DeleteMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player deletePlayer(@RequestBody Player player) {
-		playerService.deletePlayer(player);
-		return player;
+	public Team deleteTeam(@RequestBody Team team) {
+		teamService.deleteTeam(team);
+		return team;
 	}
 
 }

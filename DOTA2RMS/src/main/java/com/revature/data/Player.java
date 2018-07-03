@@ -9,8 +9,11 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
-@Table (name="USERTABLE")
+@Table
 public class Player {
 	@Id
 	@Column(name="player_ID")
@@ -42,6 +45,9 @@ public class Player {
 	@Column(unique = true)
 	private long steamId;
 	
+	@Column
+	private int isManager;
+	
 //	@ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE})
 //	@JoinTable(name="PLAYER_TEAM",
 //			joinColumns = {@JoinColumn (name="USER_ID")},
@@ -52,10 +58,15 @@ public class Player {
 //	@OneToMany(mappedBy="primaryKey.player", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<PlayerTeam> playerTeamList = new ArrayList();
 	
+	@OneToMany(mappedBy = "primaryKey.player", cascade = {CascadeType.REMOVE})
+	@Fetch(value = FetchMode.SUBSELECT)
+//	@OneToMany(mappedBy="primaryKey.player", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	private List<PlayerGame> playerGameList = new ArrayList();
+	
 	@Column
 	private String location;
 	
-	public Player(String firstName, String lastName, String username, String password, String details, Date birthday, String location, long steamId) {
+	public Player(String firstName, String lastName, String username, String password, String details, Date birthday, String location, long steamId, int isManager) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
@@ -64,6 +75,7 @@ public class Player {
 		this.birthday = birthday;
 		this.location = location;
 		this.steamId = steamId;
+		this.isManager = isManager;
 	}
 	
 	public Player() {
@@ -76,6 +88,14 @@ public class Player {
 
 	public void setPlayerTeamList(List<PlayerTeam> playerTeamList) {
 		this.playerTeamList = playerTeamList;
+	}
+	
+	public List<PlayerGame> getPlayerGameList() {
+		return playerGameList;
+	}
+
+	public void setPlayerGameList(List<PlayerGame> playerGameList) {
+		this.playerGameList = playerGameList;
 	}
 
 	public long getId() {
@@ -148,6 +168,14 @@ public class Player {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public int getIsManager() {
+		return isManager;
+	}
+
+	public void setIsManager(int isManager) {
+		this.isManager = isManager;
 	}
 
 	@Override

@@ -1,6 +1,18 @@
 package com.revature.data;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
@@ -21,6 +33,9 @@ public class Game {
 	@Column(columnDefinition = "varchar2(500 char)")
 	private String details;
 	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="primaryKey.game", cascade = {CascadeType.REMOVE})
+	private List<PlayerGame> playerGameList = new ArrayList();
+	
 	public Game() {
 		
 	}
@@ -30,6 +45,15 @@ public class Game {
 		this.details = details;
 	}
 	
+	
+	public List<PlayerGame> getPlayerGameList() {
+		return playerGameList;
+	}
+
+	public void setPlayerGameList(List<PlayerGame> playerGameList) {
+		this.playerGameList = playerGameList;
+	}
+
 	public long getId() {
 		return id;
 	}

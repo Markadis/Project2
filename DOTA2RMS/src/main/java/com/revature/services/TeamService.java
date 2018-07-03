@@ -21,7 +21,7 @@ public class TeamService implements TeamInterface {
 	}
 
 	@Override
-	public Team getTeamById(long id) {
+	public Team findTeamById(long id) {
 		return teamRepository.getOne(id);
 	}
 
@@ -32,8 +32,19 @@ public class TeamService implements TeamInterface {
 	}
 
 	@Override
-	public List<Team> getAllTeams() {
+	public List<Team> findAllTeams() {
 		return teamRepository.findAll();
+	}
+
+	@Override
+	public Team updateTeam(Team team) {
+		return teamRepository.save(team);
+	}
+
+	@Override
+	public Team deleteTeam(Team team) {
+		teamRepository.delete(team);
+		return team;
 	}
 
 //	@Override

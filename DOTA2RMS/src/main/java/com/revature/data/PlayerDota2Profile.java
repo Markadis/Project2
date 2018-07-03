@@ -2,14 +2,17 @@ package com.revature.data;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 @Table
+@AssociationOverrides({
+    @AssociationOverride(name = "primaryKey.player",
+        joinColumns = @JoinColumn(name = "PLAYER_ID")),
+    @AssociationOverride(name = "primaryKey.game",
+        joinColumns = @JoinColumn(name = "GAME_ID")) })
 public class PlayerDota2Profile {
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Game game;
-	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Player player;
+
+	@EmbeddedId
+	private PlayerGameId primaryKey = new PlayerGameId();
 	
 	@Column(columnDefinition = "varchar2(500 char)")
 	private String details;
@@ -37,21 +40,40 @@ public class PlayerDota2Profile {
 	
 	@OneToOne
 	private Hero hero3;
-
-	public Game getGame() {
-		return game;
+	
+	public PlayerDota2Profile() {
+		
 	}
 
-	public void setGame(Game game) {
-		this.game = game;
+	public PlayerDota2Profile(Player player, Game game, String details) {
+		primaryKey.setPlayer(player);
+		primaryKey.setGame(game);
+		this.details = details;
 	}
 
+	public PlayerGameId getPrimaryKey() {
+		return primaryKey;
+	}
+
+	public void setPrimaryKey(PlayerGameId primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+	
+	@Transient
 	public Player getPlayer() {
-		return player;
+		return getPrimaryKey().getPlayer();
 	}
 
 	public void setPlayer(Player player) {
-		this.player = player;
+		getPrimaryKey().setPlayer(player);
+	}
+	@Transient
+	public Game getGame() {
+		return getPrimaryKey().getGame();
+	}
+
+	public void setGame(Game game) {
+		getPrimaryKey().setGame(game);
 	}
 
 	public String getDetails() {

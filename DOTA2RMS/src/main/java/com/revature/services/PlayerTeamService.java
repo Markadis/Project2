@@ -22,7 +22,7 @@ public class PlayerTeamService implements PlayerTeamInterface {
 	}
 
 	@Override
-	public PlayerTeam getPlayerTeamById(PlayerTeamId playerTeamId) {
+	public PlayerTeam findPlayerTeamById(PlayerTeamId playerTeamId) {
 		return playerTeamRepository.getOne(playerTeamId);
 	}
 
@@ -38,7 +38,7 @@ public class PlayerTeamService implements PlayerTeamInterface {
 	}
 
 	@Override
-	public List<PlayerTeam> getAllPlayerTeam() {
+	public List<PlayerTeam> findAllPlayerTeams() {
 		return playerTeamRepository.findAll();
 	}
 

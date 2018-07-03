@@ -16,12 +16,12 @@ public class TeamInviteService implements TeamInviteInterface {
 	private TeamInviteRepository teamInviteRepository;
 
 	@Override
-	public TeamInvite createTeam(TeamInvite teamInvite) {
+	public TeamInvite createTeamInvite(TeamInvite teamInvite) {
 		return teamInviteRepository.save(teamInvite);
 	}
 
 	@Override
-	public TeamInvite getTeamById(long id) {
+	public TeamInvite findTeamInviteById(long id) {
 		return teamInviteRepository.getOne(id);
 	}
 
@@ -31,8 +31,14 @@ public class TeamInviteService implements TeamInviteInterface {
 	}
 
 	@Override
-	public List<TeamInvite> getAllTeamInvites() {
+	public List<TeamInvite> findAllTeamInvites() {
 		return teamInviteRepository.findAll();
+	}
+
+	@Override
+	public TeamInvite deleteTeamInvite(TeamInvite teamInvite) {
+		teamInviteRepository.delete(teamInvite);
+		return teamInvite;
 	}
 	
 	

@@ -7,10 +7,10 @@ import com.revature.data.PlayerTeamId;
 
 public interface PlayerTeamInterface {
 	PlayerTeam createPlayerTeam(PlayerTeam playerTeam);
-	PlayerTeam getPlayerTeamById(PlayerTeamId playerTeamId);
+	PlayerTeam findPlayerTeamById(PlayerTeamId playerTeamId);
 	PlayerTeam updatePlayerTeam(PlayerTeam playerTeam);
 //	boolean checkPlayerTeamExistsByPlayerAndTeam(Session session, Player player, Team team);
 //	boolean checkPlayerTeamExistsByTeamAndPosition(Session session, Team team, int position);
 	PlayerTeam deletePlayerTeam(PlayerTeam playerTeam);
-	List<PlayerTeam> getAllPlayerTeam();
+	List<PlayerTeam> findAllPlayerTeams();
 }

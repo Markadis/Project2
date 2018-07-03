@@ -5,8 +5,9 @@ import java.util.List;
 import com.revature.data.TeamInvite;
 
 public interface TeamInviteInterface {
-	TeamInvite createTeam(TeamInvite teamInvite);
-	TeamInvite getTeamById(long id);
+	TeamInvite createTeamInvite(TeamInvite teamInvite);
+	TeamInvite findTeamInviteById(long id);
 	TeamInvite updateTeamInvite(TeamInvite teamInvite);
-	List<TeamInvite> getAllTeamInvites();
+	TeamInvite deleteTeamInvite(TeamInvite teamInvite);
+	List<TeamInvite> findAllTeamInvites();
 }

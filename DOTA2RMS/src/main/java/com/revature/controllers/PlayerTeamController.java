@@ -13,40 +13,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.data.Player;
-import com.revature.services.PlayerService;
+import com.revature.data.PlayerTeam;
+import com.revature.data.PlayerTeamId;
+import com.revature.services.PlayerTeamService;
 
 @RestController
-@RequestMapping("/player")
-public class PlayerController {
+@RequestMapping("/player-team")
+public class PlayerTeamController {
 	
 	@Autowired
-	private PlayerService playerService;
+	private PlayerTeamService playerTeamService;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Player> getAllPlayers() {
-		return playerService.findAllPlayers();
+	public List<PlayerTeam> getAllPlayerTeams() {
+		return playerTeamService.findAllPlayerTeams();
 	}	
 
+	//NEEDS WORK.
 	@GetMapping(value="/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player findPlayerById(@PathVariable("id") long id) {
-		return playerService.findPlayerById(id);
+	public PlayerTeam findPlayerTeamById(@PathVariable("id") PlayerTeamId playerTeamId) {
+		return playerTeamService.findPlayerTeamById(playerTeamId);
 	}
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player createPlayer(@RequestBody Player player) {
-		return playerService.createPlayer(player);
+	public PlayerTeam createPlayerTeam(@RequestBody PlayerTeam playerTeam) {
+		return playerTeamService.createPlayerTeam(playerTeam);
 	}
 
 	@PutMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player updatePlayer(@RequestBody Player player) {
-		return playerService.updatePlayer(player);
+	public PlayerTeam updatePlayerTeam(@RequestBody PlayerTeam playerTeam) {
+		return playerTeamService.updatePlayerTeam(playerTeam);
 	}
 
 	@DeleteMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player deletePlayer(@RequestBody Player player) {
-		playerService.deletePlayer(player);
-		return player;
+	public PlayerTeam deletePlayerTeam(@RequestBody PlayerTeam playerTeam) {
+		playerTeamService.deletePlayerTeam(playerTeam);
+		return playerTeam;
 	}
 
 }

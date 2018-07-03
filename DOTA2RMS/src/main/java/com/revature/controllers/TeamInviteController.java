@@ -14,39 +14,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.data.Player;
-import com.revature.services.PlayerService;
+import com.revature.data.TeamInvite;
+import com.revature.services.TeamInviteService;
 
 @RestController
-@RequestMapping("/player")
-public class PlayerController {
+@RequestMapping("/team-invite")
+public class TeamInviteController {
 	
 	@Autowired
-	private PlayerService playerService;
+	private TeamInviteService teamInviteService;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Player> getAllPlayers() {
-		return playerService.findAllPlayers();
+	public List<TeamInvite> getAllTeamInvites() {
+		return teamInviteService.findAllTeamInvites();
 	}	
 
 	@GetMapping(value="/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player findPlayerById(@PathVariable("id") long id) {
-		return playerService.findPlayerById(id);
+	public TeamInvite findPlayerById(@PathVariable("id") long id) {
+		return teamInviteService.findTeamInviteById(id);
 	}
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player createPlayer(@RequestBody Player player) {
-		return playerService.createPlayer(player);
+	public TeamInvite createTeamInvite(@RequestBody TeamInvite teamInvite) {
+		return teamInviteService.createTeamInvite(teamInvite);
 	}
 
 	@PutMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player updatePlayer(@RequestBody Player player) {
-		return playerService.updatePlayer(player);
+	public TeamInvite updateTeamInvite(@RequestBody TeamInvite teamInvite) {
+		return teamInviteService.updateTeamInvite(teamInvite);
 	}
 
 	@DeleteMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player deletePlayer(@RequestBody Player player) {
-		playerService.deletePlayer(player);
-		return player;
+	public TeamInvite deleteTeamInvite(@RequestBody TeamInvite teamInvite) {
+		teamInviteService.deleteTeamInvite(teamInvite);
+		return teamInvite;
 	}
 
 }
