@@ -5,6 +5,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthedPageComponent } from './authed-page/authed-page.component';
+import { ProfileComponent } from './authed-page/profile/profile.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +17,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AuthedPageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
