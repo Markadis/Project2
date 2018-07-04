@@ -39,5 +39,10 @@ public class HeroService implements HeroInterface{
 	public List<Hero> findAllHeroes() {
 		return heroRepository.findAll();
 	}
+
+	@Override
+	public Hero updateHero(Hero hero) {
+		return heroRepository.save(hero);
+	}
 	
 }

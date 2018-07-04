@@ -11,7 +11,7 @@ import com.revature.data.Hero;
 import com.revature.services.HeroService;
 
 @RestController
-@RequestMapping("/hero")
+@RequestMapping("/heroes")
 public class HeroController {
 	
 	@Autowired
@@ -27,9 +27,15 @@ public class HeroController {
 		return heroService.findHeroById(id);
 	}
 
-	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Hero createHero(@RequestBody Hero hero) {
+	@PostMapping(value="/create", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Hero createHero(@RequestParam("name") String name, @RequestParam("id") long id, @RequestParam("localizedname") String localizedname) {
+		Hero hero = new Hero(name, id, localizedname);
 		return heroService.createHero(hero);
 	}
 
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Hero updateHero(@RequestParam("name") String name, @RequestParam("id") long id, @RequestParam("localizedname") String localizedname) {
+		Hero hero = new Hero(name, id, localizedname);
+		return heroService.updateHero(hero);
+	}
 }

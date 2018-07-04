@@ -18,7 +18,7 @@ import com.revature.data.PlayerTeamId;
 import com.revature.services.PlayerTeamService;
 
 @RestController
-@RequestMapping("/player-team")
+@RequestMapping("/player-teams")
 public class PlayerTeamController {
 	
 	@Autowired

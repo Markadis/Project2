@@ -10,5 +10,6 @@ public interface HeroInterface {
 	Hero createHero(Hero hero);
 	Hero findHeroById(long id);
 	Hero findHeroByName(String name);
+	Hero updateHero(Hero hero);
 	List<Hero> findAllHeroes();
 }

@@ -46,6 +46,10 @@ public class PlayerService implements PlayerInterface {
 		playerRepository.delete(player);
 		return player;
 	}
+
+	public Player getPlayerByUsernameAndPassword(String username, String password) {
+		return playerRepository.findByUsernameAndPassword(username, password);
+	}
 	
 	
 	

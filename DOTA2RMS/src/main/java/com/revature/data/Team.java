@@ -60,6 +60,11 @@ public class Team {
 		this.dateCreated = new Date(System.currentTimeMillis());
 	}
 	
+	public Team(String name, String details) {
+		this.name = name;
+		this.details = details;
+	}
+	
 	public Team(String name, String details, Game game) {
 		this.name = name;
 		this.details = details;

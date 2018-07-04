@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.data.Team;
 import com.revature.services.TeamService;
 
 @RestController
-@RequestMapping("/team")
+@RequestMapping("/teams")
 public class TeamController {
 	
 	@Autowired
@@ -33,8 +34,9 @@ public class TeamController {
 		return teamService.findTeamById(id);
 	}
 
-	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Team createTeam(@RequestBody Team team) {
+	@PostMapping(value="/create", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Team createTeam(@RequestParam("name") String name, @RequestParam("details") String details) {
+		Team team = new Team(name, details);
 		return teamService.createTeam(team);
 	}
 
