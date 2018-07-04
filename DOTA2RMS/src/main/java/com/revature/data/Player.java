@@ -54,7 +54,7 @@ public class Player {
 	
 //	@Column(unique = true)
 	@Column
-	private long steamId;
+	private String steamId;
 	
 	@Column
 	private int isManager;
@@ -77,7 +77,7 @@ public class Player {
 	@Column
 	private String location;
 	
-	public Player(String firstName, String lastName, String username, String password, String details, Date birthday, String location, long steamId, int isManager) {
+	public Player(String firstName, String lastName, String username, String password, String details, Date birthday, String location, String steamId, int isManager) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
@@ -165,11 +165,11 @@ public class Player {
 		this.birthday = birthday;
 	}
 
-	public long getSteamId() {
+	public String getSteamId() {
 		return steamId;
 	}
 
-	public void setSteamId(long steamId) {
+	public void setSteamId(String steamId) {
 		this.steamId = steamId;
 	}
 
