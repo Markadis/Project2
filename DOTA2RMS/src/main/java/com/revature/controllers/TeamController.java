@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.data.Game;
 import com.revature.data.Team;
+import com.revature.services.GameService;
 import com.revature.services.TeamService;
 
 @RestController
@@ -23,6 +25,9 @@ public class TeamController {
 	
 	@Autowired
 	private TeamService teamService;
+	
+	@Autowired
+	private GameService gameService;
 	
 	@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Team> getAllTeams() {
@@ -35,13 +40,16 @@ public class TeamController {
 	}
 
 	@PostMapping(value="/create", produces=MediaType.APPLICATION_JSON_VALUE)
-	public Team createTeam(@RequestParam("name") String name, @RequestParam("details") String details) {
-		Team team = new Team(name, details);
+	public Team createTeam(@RequestParam("name") String name, @RequestParam("details") String details , @RequestParam("gametitle") String gametitle) {
+		Game game = gameService.getGameByName(gametitle);
+		Team team = new Team(name, details, game);
 		return teamService.createTeam(team);
 	}
 
-	@PutMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public Team updateTeam(@RequestBody Team team) {
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Team updateTeam(@RequestParam("name") String name, @RequestParam("details") String details, @RequestParam("gametitle") String gametitle) {
+		Game game = gameService.getGameByName(gametitle);
+		Team team = new Team(name, details, game);
 		return teamService.updateTeam(team);
 	}
 

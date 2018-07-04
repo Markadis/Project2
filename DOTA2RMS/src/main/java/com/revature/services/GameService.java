@@ -28,8 +28,7 @@ public class GameService implements GameInterface {
 
 	@Override
 	public Game getGameByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return gameRepository.findByName(name);
 	}
 
 	@Override

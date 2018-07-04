@@ -9,4 +9,5 @@ import com.revature.data.Hero;
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long> {
 
+	Game findByName(String name);
 }
