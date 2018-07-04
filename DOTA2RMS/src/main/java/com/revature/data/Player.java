@@ -1,18 +1,28 @@
 package com.revature.data;
 
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 @Entity
+//@Table(uniqueConstraints= {
+//		@UniqueConstraint(columnNames="username")
+//})
 @Table
 public class Player {
 	@Id
@@ -21,7 +31,7 @@ public class Player {
 	@SequenceGenerator(allocationSize=1, name="playerIdSequence", sequenceName="SQ_PLAYERID_PK")
 	private long id;
 	
-	@Column(unique=true)
+	@Column(unique = true)
 	private String username;
 	
 	@Column
@@ -42,7 +52,8 @@ public class Player {
 	@Column
 	private Date birthday;
 	
-	@Column(unique = true)
+//	@Column(unique = true)
+	@Column
 	private long steamId;
 	
 	@Column

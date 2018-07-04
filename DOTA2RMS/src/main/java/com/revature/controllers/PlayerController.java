@@ -35,6 +35,7 @@ public class PlayerController {
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public Player createPlayer(@RequestBody Player player) {
+		System.out.println("Player username is: " + player.getUsername());
 		return playerService.createPlayer(player);
 	}
 
