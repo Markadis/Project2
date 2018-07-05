@@ -16,6 +16,7 @@ public class PlayerTeam {
 	@EmbeddedId
 	private PlayerTeamId primaryKey = new PlayerTeamId();
 	
+	//Honestly should only have 1 player in each position per team. Should check for that.
 	@Column
 	private int position;
 	

@@ -21,9 +21,11 @@ public class TeamInvite {
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Player player;
 	
+	//0 for pending, 1 for denied (hide it), 2 for approved (add a Player-Team relationship)
 	@Column
 	private int status;
 	
+	//0 for for appearing from player profile (team invites the player), 1 for appearing on manager profile (player requests to join team)
 	@Column
 	private int type;
 	
