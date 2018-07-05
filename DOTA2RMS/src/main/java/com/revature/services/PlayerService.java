@@ -48,6 +48,9 @@ public class PlayerService implements PlayerInterface {
 		return player;
 	}
 	
+	public Player getPlayerByUsernameAndPassword(String username, String password) {
+		return playerRepository.findByUsernameAndPassword(username, password);
+	}
 	
 	
 }

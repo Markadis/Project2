@@ -9,5 +9,7 @@ import com.revature.data.Player;
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
 	Player findByUsername(String username);
+
+	Player findByUsernameAndPassword(String username, String password);
 	
 }
