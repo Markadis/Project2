@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.data.Player;
@@ -53,6 +54,11 @@ public class PlayerController {
 	public Player deletePlayer(@RequestBody Player player) {
 		playerService.deletePlayer(player);
 		return player;
+	}
+	
+	@GetMapping(value="/login", produces=MediaType.APPLICATION_JSON_VALUE)
+	public Player loginPlayer(@RequestParam("username") String username, @RequestParam("password") String password) {
+		return playerService.getPlayerByUsernameAndPassword(username, password);
 	}
 
 }
