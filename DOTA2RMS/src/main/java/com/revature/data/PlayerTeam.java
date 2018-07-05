@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
         joinColumns = @JoinColumn(name = "PLAYER_ID")),
     @AssociationOverride(name = "primaryKey.team",
         joinColumns = @JoinColumn(name = "TEAM_ID")) })
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler", "player", "team"})
 public class PlayerTeam {
 	@EmbeddedId
 	private PlayerTeamId primaryKey = new PlayerTeamId();

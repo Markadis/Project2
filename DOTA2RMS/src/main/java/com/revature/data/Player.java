@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //		@UniqueConstraint(columnNames="username")
 //})
 @Table
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","playerGameList", "playerTeamList"})
 public class Player {
 	@Id
 	@Column(name="player_ID")
@@ -72,7 +72,7 @@ public class Player {
 //	@OneToMany(mappedBy="primaryKey.player", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<PlayerTeam> playerTeamList = new ArrayList();
 	
-	@OneToMany(mappedBy = "primaryKey.player", cascade = {CascadeType.REMOVE})
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "primaryKey.player", cascade = {CascadeType.ALL})
 	@Fetch(value = FetchMode.SUBSELECT)
 //	@OneToMany(mappedBy="primaryKey.player", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<PlayerGame> playerGameList = new ArrayList();

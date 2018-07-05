@@ -30,8 +30,8 @@ public class PlayerDota2ProfileController {
 	}	
 
 	//NEEDS WORK.
-	@GetMapping(value="/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public PlayerDota2Profile findPlayerTeamById(@PathVariable("id") PlayerGameId playerGameId) {
+	@GetMapping(value="/{player.id}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public PlayerDota2Profile findPlayerTeamById(@PathVariable("player.id") PlayerGameId playerGameId) {
 		return playerDota2ProfileService.findPlayerDota2ProfileById(playerGameId);
 	}
 

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
         joinColumns = @JoinColumn(name = "PLAYER_ID")),
     @AssociationOverride(name = "primaryKey.game",
         joinColumns = @JoinColumn(name = "GAME_ID")) })
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler", "player", "game"})
 public class PlayerDota2Profile {
 
 	@EmbeddedId
@@ -35,13 +35,13 @@ public class PlayerDota2Profile {
 	@Column
 	private int position;
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	private Hero hero1;
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	private Hero hero2;
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	private Hero hero3;
 	
 	public PlayerDota2Profile() {
@@ -66,7 +66,7 @@ public class PlayerDota2Profile {
 	public Player getPlayer() {
 		return getPrimaryKey().getPlayer();
 	}
-
+	@Transient
 	public void setPlayer(Player player) {
 		getPrimaryKey().setPlayer(player);
 	}
@@ -74,7 +74,7 @@ public class PlayerDota2Profile {
 	public Game getGame() {
 		return getPrimaryKey().getGame();
 	}
-
+	@Transient
 	public void setGame(Game game) {
 		getPrimaryKey().setGame(game);
 	}

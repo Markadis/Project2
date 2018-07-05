@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table
 //@DynamicInsert
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","playerTeamList"})
 public class Team {
 	
 	@Id
@@ -56,7 +56,7 @@ public class Team {
 //	private Set<User> userList;
 
 //	@OneToMany(mappedBy="primaryKey.team", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="primaryKey.team", cascade = {CascadeType.REMOVE})
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="primaryKey.team", cascade = {CascadeType.ALL})
 	private List<PlayerTeam> playerTeamList = new ArrayList();
 	
 	public Team() {

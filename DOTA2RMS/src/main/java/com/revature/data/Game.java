@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Component
 @Entity
 @Table
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","playerGameList"})
 public class Game {
 	
 	@Id
@@ -36,7 +36,7 @@ public class Game {
 	@Column(columnDefinition = "varchar2(500 char)")
 	private String details;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="primaryKey.game", cascade = {CascadeType.REMOVE})
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="primaryKey.game", cascade = {CascadeType.ALL})
 	private List<PlayerGame> playerGameList = new ArrayList();
 	
 	public Game() {
