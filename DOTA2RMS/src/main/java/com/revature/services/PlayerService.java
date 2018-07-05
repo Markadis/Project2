@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.Player;
 import com.revature.interfaces.PlayerInterface;
 import com.revature.repositories.PlayerRepository;
 
 @Service
+@Transactional
 public class PlayerService implements PlayerInterface {
 
 	@Autowired
@@ -21,9 +23,8 @@ public class PlayerService implements PlayerInterface {
 	}
 
 	@Override
-	public Player getPlayerByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public Player findByUsername(String username) {
+		return playerRepository.findByUsername(username);
 	}
 
 	@Override

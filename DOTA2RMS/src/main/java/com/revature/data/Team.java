@@ -13,9 +13,12 @@ import javax.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table
 //@DynamicInsert
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Team {
 	
 	@Id
@@ -42,7 +45,7 @@ public class Team {
 	@ColumnDefault("null")
 	private long captainId;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Game game;
 	
 	@Column

@@ -5,12 +5,14 @@ import java.util.List;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.Game;
 import com.revature.interfaces.GameInterface;
 import com.revature.repositories.GameRepository;
 
 @Service
+@Transactional
 public class GameService implements GameInterface {
 	
 	@Autowired
@@ -27,9 +29,8 @@ public class GameService implements GameInterface {
 	}
 
 	@Override
-	public Game getGameByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Game findGameByName(String name) {
+		return gameRepository.findByName(name);
 	}
 
 	@Override

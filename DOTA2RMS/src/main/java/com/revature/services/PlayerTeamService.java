@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.PlayerTeam;
 import com.revature.data.PlayerTeamId;
@@ -11,6 +12,7 @@ import com.revature.interfaces.PlayerTeamInterface;
 import com.revature.repositories.PlayerTeamRepository;
 
 @Service
+@Transactional
 public class PlayerTeamService implements PlayerTeamInterface {
 
 	@Autowired

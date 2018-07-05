@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.Player;
 import com.revature.data.PlayerDota2Profile;
@@ -12,6 +13,7 @@ import com.revature.interfaces.PlayerDota2ProfileInterface;
 import com.revature.repositories.PlayerDota2ProfileRepository;
 
 @Service
+@Transactional
 public class PlayerDota2ProfileService implements PlayerDota2ProfileInterface {
 
 	@Autowired

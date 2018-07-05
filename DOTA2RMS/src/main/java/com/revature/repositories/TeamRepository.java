@@ -8,4 +8,5 @@ import com.revature.data.Team;
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Long> {
 
+	Team findByName(String name);
 }

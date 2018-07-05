@@ -23,8 +23,13 @@ public class HeroController {
 	}
 	
 	@GetMapping(value="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Hero getHeroById(@PathVariable("id") Integer id) {
+	public Hero getHeroById(@PathVariable("id") long id) {
 		return heroService.findHeroById(id);
+	}
+	
+	@GetMapping(value="/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Hero findHeroByName(@PathVariable("name") String name) {
+		return heroService.findHeroByName(name);
 	}
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)

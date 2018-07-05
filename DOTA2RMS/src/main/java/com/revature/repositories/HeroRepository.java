@@ -8,4 +8,5 @@ import com.revature.data.Hero;
 @Repository
 public interface HeroRepository extends JpaRepository<Hero, Long> {
 
+	Hero findByLocalizedName(String name);
 }

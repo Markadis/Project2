@@ -31,8 +31,7 @@ public class HeroService implements HeroInterface{
 
 	@Override
 	public Hero findHeroByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return heroRepository.findByLocalizedName(name);
 	}
 
 	@Override

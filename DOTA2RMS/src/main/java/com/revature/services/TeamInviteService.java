@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.TeamInvite;
 import com.revature.interfaces.TeamInviteInterface;
 import com.revature.repositories.TeamInviteRepository;
 
 @Service
+@Transactional
 public class TeamInviteService implements TeamInviteInterface {
 	
 	@Autowired

@@ -2,6 +2,8 @@ package com.revature.data;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="PLAYER_TEAM")
 @AssociationOverrides({
@@ -9,6 +11,7 @@ import javax.persistence.*;
         joinColumns = @JoinColumn(name = "PLAYER_ID")),
     @AssociationOverride(name = "primaryKey.team",
         joinColumns = @JoinColumn(name = "TEAM_ID")) })
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class PlayerTeam {
 	@EmbeddedId
 	private PlayerTeamId primaryKey = new PlayerTeamId();

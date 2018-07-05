@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.data.Team;
 import com.revature.interfaces.TeamInterface;
 import com.revature.repositories.TeamRepository;
 
 @Service
+@Transactional
 public class TeamService implements TeamInterface {
 	
 	@Autowired
@@ -26,9 +28,8 @@ public class TeamService implements TeamInterface {
 	}
 
 	@Override
-	public Team getTeamByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public Team findTeamByName(String name) {
+		return teamRepository.findByName(name);
 	}
 
 	@Override

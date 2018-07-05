@@ -2,8 +2,11 @@ package com.revature.data;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class TeamInvite {
 
 	@Id

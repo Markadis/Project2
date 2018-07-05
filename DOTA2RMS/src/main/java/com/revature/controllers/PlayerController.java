@@ -32,6 +32,11 @@ public class PlayerController {
 	public Player findPlayerById(@PathVariable("id") long id) {
 		return playerService.findPlayerById(id);
 	}
+	
+	@GetMapping(value="/username/{username}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public Player findByUsername(@PathVariable("username") String username) {
+		return playerService.findByUsername(username);
+	}
 
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public Player createPlayer(@RequestBody Player player) {

@@ -10,7 +10,7 @@ import com.revature.data.Player;
 
 public interface PlayerInterface {
 	Player createPlayer(Player player);
-	Player getPlayerByUsername(String username);
+	Player findByUsername(String username);
 	Player findPlayerById(long id);
 	Player updatePlayer(Player player);
 	Player deletePlayer(Player player);

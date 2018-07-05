@@ -8,4 +8,6 @@ import com.revature.data.Player;
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
+	Player findByUsername(String username);
+	
 }

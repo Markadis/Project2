@@ -19,11 +19,14 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 //@Table(uniqueConstraints= {
 //		@UniqueConstraint(columnNames="username")
 //})
 @Table
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Player {
 	@Id
 	@Column(name="player_ID")

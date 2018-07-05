@@ -33,6 +33,11 @@ public class TeamController {
 		return teamService.findTeamById(id);
 	}
 
+	@GetMapping(value="/name/{name}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public Team findTeamByName(@PathVariable("name") String name) {
+		return teamService.findTeamByName(name);
+	}
+
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public Team createTeam(@RequestBody Team team) {
 		return teamService.createTeam(team);
