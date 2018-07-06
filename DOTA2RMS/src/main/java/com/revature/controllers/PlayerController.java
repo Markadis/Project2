@@ -58,9 +58,17 @@ public class PlayerController {
 		return player;
 	}
 	
-	@GetMapping(value="/login", produces=MediaType.APPLICATION_JSON_VALUE)
-	public Player loginPlayer(@RequestParam("username") String username, @RequestParam("password") String password) {
-		return playerService.getPlayerByUsernameAndPassword(username, password);
+	@PostMapping(value="/login", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	public Player loginPlayer(@RequestBody Player player) {
+		String username = player.getUsername();
+		String password = player.getPassword();
+		Player playerToLog = playerService.getPlayerByUsernameAndPassword(username, password);
+		
+		if (playerToLog == null) {
+			return player;
+		} else {
+			return playerToLog;
+		}
 	}
 
 }
