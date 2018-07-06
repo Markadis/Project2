@@ -15,10 +15,10 @@ public class TeamInvite {
 	@SequenceGenerator(allocationSize=1, name="teamInviteIdSequence", sequenceName="SQ_TEAM_INVITE_ID_PK")
 	private long id;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Team team;
 	
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Player player;
 	
 	//0 for pending, 1 for denied (hide it), 2 for approved (add a Player-Team relationship)
