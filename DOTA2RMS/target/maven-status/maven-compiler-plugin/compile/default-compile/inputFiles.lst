@@ -11,15 +11,18 @@ C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\main.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\TeamService.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\HeroController.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\TeamRepository.java
+C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\TeamChallengeController.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\HeroService.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\PlayerRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\interfaces\TeamInterface.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\PlayerController.java
+C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\interfaces\TeamChallengeInterface.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\PlayerDota2ProfileRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\data\PlayerDota2Profile.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\GameRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\TeamInviteController.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\data\HibernateJpaSessionFactory.java
+C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\TeamChallengeRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\PlayerTeamService.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\interfaces\HeroInterface.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\interfaces\PlayerInterface.java
@@ -28,6 +31,7 @@ C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\G
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\data\PlayerTeamId.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\data\TeamInvite.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\PlayerDota2ProfileService.java
+C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\data\TeamChallenge.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\interfaces\PlayerDota2ProfileInterface.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\HeroRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\PlayerTeamController.java
@@ -41,3 +45,4 @@ C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\T
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\TeamInviteRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\repositories\PlayerTeamRepository.java
 C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\controllers\PlayerDota2ProfileController.java
+C:\Users\Owner\Documents\Project2\DOTA2RMS\src\main\java\com\revature\services\TeamChallengeService.java

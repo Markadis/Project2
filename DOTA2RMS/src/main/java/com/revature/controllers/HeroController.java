@@ -11,6 +11,7 @@ import com.revature.data.Hero;
 import com.revature.services.HeroService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/hero")
 public class HeroController {
 	

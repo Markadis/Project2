@@ -5,6 +5,7 @@ com\revature\repositories\PlayerRepository.class
 com\revature\data\TeamInvite.class
 com\revature\data\SomeService.class
 com\revature\services\GameService.class
+com\revature\data\TeamChallenge.class
 com\revature\services\PlayerService.class
 com\revature\main.class
 com\revature\repositories\TeamInviteRepository.class
@@ -14,15 +15,18 @@ com\revature\repositories\TeamRepository.class
 com\revature\interfaces\PlayerDota2ProfileInterface.class
 com\revature\interfaces\PlayerInterface.class
 com\revature\services\TeamInviteService.class
+com\revature\services\TeamChallengeService.class
 com\revature\repositories\PlayerDota2ProfileRepository.class
 com\revature\data\Player.class
 com\revature\controllers\PlayerDota2ProfileController.class
 com\revature\data\Hero.class
 com\revature\controllers\TeamInviteController.class
 com\revature\data\Team.class
+com\revature\interfaces\TeamChallengeInterface.class
 com\revature\interfaces\TeamInviteInterface.class
 com\revature\data\PlayerDota2Profile.class
 com\revature\data\Game.class
+com\revature\controllers\TeamChallengeController.class
 com\revature\services\PlayerDota2ProfileService.class
 com\revature\HeroLoader.class
 com\revature\data\PlayerGame.class
